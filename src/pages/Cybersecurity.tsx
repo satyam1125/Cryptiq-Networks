@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
+import ParticleBackground from "@/components/ParticleBackground";
 import { Shield, Lock, Search, AlertTriangle } from "lucide-react";
 
 const Cybersecurity = () => {
@@ -36,11 +37,12 @@ const Cybersecurity = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
+      <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-background to-secondary/20">
+      <section className="pt-32 pb-16 px-4 relative z-10">
         <div className="container mx-auto max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
             Cyber Security Architecture & Forensics
@@ -53,16 +55,16 @@ const Cybersecurity = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             Our Security Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 border border-border hover:border-primary transition-all duration-300 animate-fade-in"
+                className="bg-card/50 backdrop-blur-lg rounded-2xl p-8 border border-border hover:border-primary transition-all duration-300 animate-fade-in"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-4">
                   <service.icon className="w-6 h-6 text-white" />
@@ -86,7 +88,7 @@ const Cybersecurity = () => {
               {protectionAreas.map((area, index) => (
                 <div
                   key={index}
-                  className="bg-white/80 backdrop-blur-lg p-4 rounded-xl border border-border text-center hover:border-primary transition-all hover:scale-105"
+                  className="bg-card/50 backdrop-blur-lg p-4 rounded-xl border border-border text-center hover:border-primary transition-all hover:scale-105"
                 >
                   <span className="font-medium text-foreground">{area}</span>
                 </div>
@@ -97,27 +99,27 @@ const Cybersecurity = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 px-4 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="py-16 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             Why Choose Our Security Services?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-card/50 backdrop-blur-lg rounded-xl border border-border">
               <div className="text-5xl font-bold text-primary mb-3">24/7</div>
               <h4 className="text-lg font-bold text-foreground mb-2">Monitoring</h4>
               <p className="text-muted-foreground">
                 Round-the-clock security surveillance and threat detection
               </p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-card/50 backdrop-blur-lg rounded-xl border border-border">
               <div className="text-5xl font-bold text-primary mb-3">Expert</div>
               <h4 className="text-lg font-bold text-foreground mb-2">Team</h4>
               <p className="text-muted-foreground">
                 Certified security professionals with years of experience
               </p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-card/50 backdrop-blur-lg rounded-xl border border-border">
               <div className="text-5xl font-bold text-primary mb-3">Proven</div>
               <h4 className="text-lg font-bold text-foreground mb-2">Track Record</h4>
               <p className="text-muted-foreground">
@@ -129,7 +131,7 @@ const Cybersecurity = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto">
           <ContactForm
             defaultService="cybersecurity"

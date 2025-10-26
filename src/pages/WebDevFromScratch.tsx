@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
+import ParticleBackground from "@/components/ParticleBackground";
 import { FileText, ShoppingCart, Briefcase, GraduationCap, User, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -11,18 +12,18 @@ const WebDevFromScratch = () => {
   const handleServiceSelect = (service: string) => {
     setSelectedService(service);
     setShowContactForm(true);
-    // Scroll to contact form
     setTimeout(() => {
       document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
+      <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-background to-secondary/20">
+      <section className="pt-32 pb-16 px-4 relative z-10">
         <div className="container mx-auto max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
             Web Development from Scratch
@@ -35,11 +36,11 @@ const WebDevFromScratch = () => {
       </section>
 
       {/* Service Options */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Landing Pages Card */}
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-10 border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.2)] animate-fade-in">
+            <div className="bg-card/50 backdrop-blur-lg rounded-2xl p-10 border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.2)] animate-fade-in">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <FileText className="w-8 h-8 text-white" />
@@ -92,7 +93,7 @@ const WebDevFromScratch = () => {
             </div>
 
             {/* E-commerce Card */}
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-10 border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.2)] animate-fade-in">
+            <div className="bg-card/50 backdrop-blur-lg rounded-2xl p-10 border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.2)] animate-fade-in">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <ShoppingCart className="w-8 h-8 text-white" />
@@ -149,7 +150,7 @@ const WebDevFromScratch = () => {
 
       {/* Contact Form Section */}
       {showContactForm && (
-        <section id="contact-form" className="py-20 px-4 bg-gradient-to-b from-secondary/20 to-background">
+        <section id="contact-form" className="py-20 px-4 relative z-10">
           <div className="container mx-auto">
             <ContactForm
               defaultService="website-development"

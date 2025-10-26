@@ -1,12 +1,18 @@
 import Navbar from "@/components/Navbar";
 import ServiceCard from "@/components/ServiceCard";
 import ParticleBackground from "@/components/ParticleBackground";
-import { Globe, Smartphone, Shield } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
+import { Globe, Smartphone, Shield, MapPin, Mail, Phone, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Index = () => {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -16,8 +22,8 @@ const Index = () => {
         {/* Animated particle background */}
         <div className="absolute inset-0 -z-10">
           <ParticleBackground />
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         </div>
 
         <div className="container mx-auto text-center max-w-5xl">
@@ -29,10 +35,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.span 
-              className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
+              className="inline-block bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500 bg-clip-text text-transparent"
               style={{
-                textShadow: "0 10px 30px rgba(255, 20, 147, 0.3), 0 0 60px rgba(255, 20, 147, 0.2)",
-                filter: "drop-shadow(0 0 20px rgba(255, 20, 147, 0.4))"
+                textShadow: "0 10px 30px rgba(147, 51, 234, 0.3), 0 0 60px rgba(147, 51, 234, 0.2)",
+                filter: "drop-shadow(0 0 20px rgba(147, 51, 234, 0.4))"
               }}
               animate={{
                 rotateX: [0, 5, 0, -5, 0],
@@ -62,10 +68,15 @@ const Index = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/our-work#contact">Start Your Project</Link>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              onClick={scrollToContact}
+              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700"
+            >
+              Start Your Project
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
               <Link to="/our-work">View Our Work</Link>
             </Button>
           </div>
@@ -107,18 +118,199 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Digital Presence?
-          </h2>
-          <p className="text-lg mb-8 opacity-90">
-            Let's discuss how we can help bring your vision to life
-          </p>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-            <Link to="/our-work#contact">Get in Touch</Link>
-          </Button>
+      {/* Contact Form & Office Address Section */}
+      <section id="contact" className="py-20 px-4 relative">
+        <div className="absolute inset-0 -z-10">
+          <ParticleBackground />
+        </div>
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Get in Touch
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Let's discuss your project and bring your vision to life
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <ContactForm
+                title=""
+                description=""
+              />
+            </div>
+
+            {/* Office Addresses */}
+            <div className="space-y-6">
+              {/* Mumbai Office */}
+              <Card className="bg-card/50 backdrop-blur-lg border-border hover:border-purple-500 transition-all">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <MapPin className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Mumbai Office</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Ulwe,<br />
+                        Belapur,<br />
+                         Navi Mumbai, Maharashtra 410206
+                      </p>
+                    </div>
+                  </div>
+                  <div className="space-y-3 mt-4">
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-purple-500" />
+                      <a href="tel:+912212345678" className="text-sm text-muted-foreground hover:text-purple-500">
+                        +91 7400131613
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Mail className="w-4 h-4 text-purple-500" />
+                      <a href="mailto:mumbai@cryptiqnetworks.com" className="text-sm text-muted-foreground hover:text-purple-500">
+                        cryptiqnetworks@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Prayagraj Office */}
+              <Card className="bg-card/50 backdrop-blur-lg border-border hover:border-purple-500 transition-all">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <MapPin className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Prayagraj Office</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Hanuman Mandir,<br />
+                        Civil Lines,<br />
+                        Prayagraj, Uttar Pradesh 211019
+                      </p>
+                    </div>
+                  </div>
+                  <div className="space-y-3 mt-4">
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-purple-500" />
+                      <a href="tel:+915322123456" className="text-sm text-muted-foreground hover:text-purple-500">
+                        +91 6392769496
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Mail className="w-4 h-4 text-purple-500" />
+                      <a href="mailto:prayagraj@cryptiqnetworks.com" className="text-sm text-muted-foreground hover:text-purple-500">
+                        cryptiqnetworks@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Company Info */}
+            <div>
+              <h3 className="text-3xl font-black mb-4">CRYPTIQ NETWORKS</h3>
+              <p className="text-white/80 mb-4">
+                Design, Deploy & Defend - Your trusted partner in digital transformation.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.instagram.com/cryptiq_network?igsh=MWNpbTJ5M3Zud29wbw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/satyamcyber"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-xl font-bold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/services/website-development" className="text-white/80 hover:text-white transition-colors">
+                    Website Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/app-development" className="text-white/80 hover:text-white transition-colors">
+                    App Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/cybersecurity" className="text-white/80 hover:text-white transition-colors">
+                    Cybersecurity
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/our-work" className="text-white/80 hover:text-white transition-colors">
+                    Our Work
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-white/80 hover:text-white transition-colors">
+                    About Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-xl font-bold mb-4">Contact Us</h4>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  <a href="mailto:info@cryptiqnetworks.com" className="text-white/80 hover:text-white transition-colors">
+                    info@cryptiqnetworks.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <a href="tel:+912212345678" className="text-white/80 hover:text-white transition-colors">
+                    +91 22 1234 5678
+                  </a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <span className="text-white/80">
+                    Mumbai & Prayagraj, India
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-white/20 mt-12 pt-8 text-center">
+            <p className="text-white/60">
+              © {new Date().getFullYear()} Cryptiq Networks. All rights reserved.
+            </p>
+          </div>
         </div>
       </section>
     </div>

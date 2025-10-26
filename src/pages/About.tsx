@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ParticleBackground from "@/components/ParticleBackground";
 import { Users, Target, Zap, Award } from "lucide-react";
 
 const About = () => {
@@ -44,11 +45,12 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
+      <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-background to-secondary/20">
+      <section className="pt-32 pb-16 px-4 relative z-10">
         <div className="container mx-auto max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
             About Cryptiq Networks
@@ -61,10 +63,10 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-border">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+          <div className="bg-card/50 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-border">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground">
               Our Mission & Vision
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto mb-8">
@@ -83,16 +85,16 @@ const About = () => {
       </section>
 
       {/* Values Grid */}
-      <section className="py-16 px-4 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="py-16 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             Our Core Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 border border-border hover:border-primary transition-all duration-300 animate-fade-in text-center"
+                className="bg-card/50 backdrop-blur-lg rounded-2xl p-6 border border-border hover:border-primary transition-all duration-300 animate-fade-in text-center"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-6 h-6 text-white" />
@@ -110,10 +112,10 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Meet Our Leadership Team
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -125,7 +127,7 @@ const About = () => {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="group bg-white/80 backdrop-blur-lg rounded-2xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.3)] animate-fade-in"
+                className="group bg-card/50 backdrop-blur-lg rounded-2xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.3)] animate-fade-in"
               >
                 {/* Avatar */}
                 <div className="bg-gradient-to-br from-primary to-accent p-12 flex items-center justify-center">
@@ -168,7 +170,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-primary to-accent text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-primary to-accent text-white relative z-10">
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Join Us on Our Journey

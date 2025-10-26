@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
+import ParticleBackground from "@/components/ParticleBackground";
 import { ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const OurWork = () => {
   const projects = [
@@ -24,11 +24,12 @@ const OurWork = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
+      <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-background to-secondary/20">
+      <section className="pt-32 pb-16 px-4 relative z-10">
         <div className="container mx-auto max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
             Our Previous Work
@@ -41,13 +42,13 @@ const OurWork = () => {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-white/80 backdrop-blur-lg rounded-2xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.3)] animate-fade-in"
+                className="group bg-card/50 backdrop-blur-lg rounded-2xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_hsl(328,100%,54%,0.3)] animate-fade-in"
               >
                 {/* Project Header */}
                 <div className="bg-gradient-to-r from-primary to-accent p-6">
@@ -135,7 +136,7 @@ const OurWork = () => {
 
           {/* CTA Section */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Ready to Showcase Your Project?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -146,7 +147,7 @@ const OurWork = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-secondary/20 to-background">
+      <section id="contact" className="py-20 px-4 relative z-10">
         <div className="container mx-auto">
           <ContactForm
             title="Start Your Project Today"

@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ParticleBackground from "@/components/ParticleBackground";
 import { Link } from "react-router-dom";
 import { Search, Code, Edit } from "lucide-react";
 
@@ -25,11 +26,12 @@ const WebsiteDevelopment = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
+      <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-background to-secondary/20">
+      <section className="pt-32 pb-16 px-4 relative z-10">
         <div className="container mx-auto max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
             Website Development Services
@@ -42,7 +44,7 @@ const WebsiteDevelopment = () => {
       </section>
 
       {/* Services Cards */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -51,7 +53,7 @@ const WebsiteDevelopment = () => {
                 to={service.link}
                 className="group"
               >
-                <div className="h-full bg-white/80 backdrop-blur-lg rounded-2xl p-8 border-2 border-border transition-all duration-300 hover:border-primary hover:shadow-[0_0_40px_hsl(328,100%,54%,0.3)] hover:scale-105 animate-fade-in">
+                <div className="h-full bg-card/50 backdrop-blur-lg rounded-2xl p-8 border-2 border-border transition-all duration-300 hover:border-primary hover:shadow-[0_0_40px_hsl(328,100%,54%,0.3)] hover:scale-105 animate-fade-in">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 group-hover:animate-glow-pulse">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
