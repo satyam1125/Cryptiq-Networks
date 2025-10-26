@@ -38,19 +38,21 @@ const Cybersecurity = () => {
 
   return (
     <div className="min-h-screen relative">
-      <Navbar />
+      <Navbar hideMenu={true} />
       <ParticleBackground />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 relative z-10">
-        <div className="container mx-auto max-w-5xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
-            Cyber Security Architecture & Forensics
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-            Protect your digital assets with comprehensive cybersecurity solutions. We provide 
-            enterprise-grade security architecture and expert forensics services to keep your business safe.
-          </p>
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
+              Cyber Security Architecture & Forensics
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
+              Protect your digital assets with comprehensive cybersecurity solutions. We provide 
+              enterprise-grade security architecture and expert forensics services to keep your business safe.
+            </p>
+          </div>
         </div>
       </section>
 

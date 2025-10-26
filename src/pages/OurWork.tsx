@@ -25,7 +25,7 @@ const OurWork = () => {
 
   return (
     <div className="min-h-screen relative">
-      <Navbar />
+      <Navbar hideMenu={true} />
       <ParticleBackground />
 
       {/* Hero Section */}
