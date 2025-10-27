@@ -352,8 +352,8 @@ const Index = () => {
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:info@cryptiqnetworks.com" className="text-white/80 hover:text-white transition-colors">
-                    info@cryptiqnetworks.com
+                  <a href="mailto:cryptiqnetworks@gmail.com" className="text-white/80 hover:text-white transition-colors">
+                    cryptiqnetworks@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
