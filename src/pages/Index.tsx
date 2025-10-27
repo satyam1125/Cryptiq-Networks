@@ -114,6 +114,20 @@ const Index = () => {
               description="Protect your digital assets with our comprehensive cybersecurity architecture and forensics services."
               link="/services/cybersecurity"
             />
+
+            {/* New services: AI Agents & Graphic Designing */}
+            <ServiceCard
+              icon={MapPin} // reuse an icon - replace if desired
+              title="AI Agents"
+              description="Custom AI agent solutions — automation, chatbots, autonomous agents and integrations."
+              link="/services/ai-agents"
+            />
+            <ServiceCard
+              icon={Mail} // reuse an icon - replace if desired
+              title="Graphic Designing"
+              description="Logo, poster, business card and UI/UX design services to elevate your brand."
+              link="/services/graphic-designing"
+            />
           </div>
         </div>
       </section>
@@ -267,6 +281,19 @@ const Index = () => {
                     Cybersecurity
                   </Link>
                 </li>
+
+                {/* New links */}
+                <li>
+                  <Link to="/services/ai-agents" className="text-white/80 hover:text-white transition-colors">
+                    AI Agents
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/graphic-designing" className="text-white/80 hover:text-white transition-colors">
+                    Graphic Designing
+                  </Link>
+                </li>
+
                 <li>
                   <Link to="/our-work" className="text-white/80 hover:text-white transition-colors">
                     Our Work

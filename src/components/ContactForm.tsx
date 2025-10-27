@@ -124,6 +124,12 @@ const ContactForm = ({
               <option value="seo-optimization">SEO Optimization</option>
               <option value="web-dev-from-scratch">Web Dev from Scratch</option>
               <option value="modify-website">Modify Existing Website</option>
+
+              {/* New services */}
+              <option value="ai-agents">AI Agents</option>
+              <option value="graphic-logo-design">Graphic - Logo Designing</option>
+              <option value="graphic-poster-businesscard">Graphic - Poster & Business Card</option>
+              <option value="graphic-ui-ux">Graphic - UI / UX Designing</option>
             </select>
           </div>
 
