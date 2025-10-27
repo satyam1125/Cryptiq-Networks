@@ -25,19 +25,54 @@ const ContactForm = ({
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: defaultService,
-      message: "",
-    });
+
+    try {
+      const payload = {
+        access_key: "ab2c8e63-f47c-4680-adc1-e1747054e2fc",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        toast({
+          title: "Message Sent!",
+          description: "We've received your message and will get back to you within 24 hours.",
+        });
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: data.message || "Unable to submit the form. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Error",
+        description: "An error occurred while sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: defaultService,
+        message: "",
+      });
+    }
   };
 
   const handleChange = (
@@ -58,6 +93,7 @@ const ContactForm = ({
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          <input type="hidden" name="access_key" value="ab2c8e63-f47c-4680-adc1-e1747054e2fc" />
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
               Name *
