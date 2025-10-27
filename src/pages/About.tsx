@@ -1,23 +1,37 @@
 import Navbar from "@/components/Navbar";
 import ParticleBackground from "@/components/ParticleBackground";
-import { Users, Target, Zap, Award } from "lucide-react";
+import { Users, Target, Zap, Award, ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   const team = [
     {
       name: "Satyam Mishra",
-      role: "Founder & CEO",
+      role: "Founder",
       bio: "Visionary leader with a passion for innovative web solutions and cybersecurity.",
+      image: "satyam.jpg",
     },
     {
       name: "Samartha Arote",
-      role: "Co-Founder & CTO",
+      role: "Co-Founder",
       bio: "Tech expert specializing in full-stack development and system architecture.",
+      image: "samartha.jpg",
     },
     {
       name: "Ajay Mishra",
-      role: "Co-Founder & COO",
+      role: "Co-Founder",
       bio: "Operations specialist ensuring smooth project delivery and client satisfaction.",
+      image: "ajay.png",
     },
   ];
 
@@ -131,11 +145,19 @@ const About = () => {
               >
                 {/* Avatar */}
                 <div className="bg-gradient-to-br from-primary to-accent p-12 flex items-center justify-center">
-                  <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-4xl font-bold text-white">
-                      {member.name.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-24 h-24 rounded-full object-cover border-2 border-white/20"
+                    />
+                  ) : (
+                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-4xl font-bold text-white">
+                        {member.name.split(" ").map(n => n[0]).join("")}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -181,6 +203,18 @@ const About = () => {
           </p>
         </div>
       </section>
+
+      {showTop && (
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={scrollToTop}
+          className="fixed right-4 bottom-6 md:bottom-8 z-50 bg-background/70 backdrop-blur rounded-full shadow-lg text-foreground hover:text-primary"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </Button>
+      )}
     </div>
   );
 };

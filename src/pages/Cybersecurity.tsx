@@ -1,9 +1,22 @@
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
 import ParticleBackground from "@/components/ParticleBackground";
-import { Shield, Lock, Search, AlertTriangle } from "lucide-react";
+import { Shield, Lock, Search, AlertTriangle, ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const Cybersecurity = () => {
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   const services = [
     {
       icon: Shield,
@@ -142,6 +155,18 @@ const Cybersecurity = () => {
           />
         </div>
       </section>
+
+      {showTop && (
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={scrollToTop}
+          className="fixed right-4 bottom-6 md:bottom-8 z-50 bg-background/70 backdrop-blur rounded-full shadow-lg text-foreground hover:text-primary"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </Button>
+      )}
     </div>
   );
 };

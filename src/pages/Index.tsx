@@ -7,15 +7,42 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <div className="min-h-screen">
       <Navbar />
+      {/* Back-to-top button */}
+      {showTop && (
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={scrollToTop}
+          className="fixed right-4 bottom-6 md:bottom-8 z-50 bg-background/70 backdrop-blur rounded-full shadow-lg text-foreground hover:text-primary"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </Button>
+      )}
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">

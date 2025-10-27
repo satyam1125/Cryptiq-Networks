@@ -1,35 +1,60 @@
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
 import ParticleBackground from "@/components/ParticleBackground";
-import { Wrench, Sparkles, Rocket, Shield } from "lucide-react";
+import { Wrench, Sparkles, Rocket, Shield, ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const ModifyWebsite = () => {
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const features = [
     {
       icon: Wrench,
       title: "Feature Updates",
-      description: "Add new functionality and modern features to your existing site",
+      description:
+        "Add new functionality and modern features to your existing site",
     },
     {
       icon: Sparkles,
       title: "Design Refresh",
-      description: "Modernize your website's look and feel with contemporary design",
+      description:
+        "Modernize your website's look and feel with contemporary design",
     },
     {
       icon: Rocket,
       title: "Performance Boost",
-      description: "Optimize speed and performance for better user experience",
+      description:
+        "Optimize speed and performance for better user experience",
     },
     {
       icon: Shield,
       title: "Security Updates",
-      description: "Keep your website secure with the latest security patches",
+      description:
+        "Keep your website secure with the latest security patches",
     },
   ];
 
   return (
     <div className="min-h-screen relative">
       <Navbar hideMenu={true} />
+      {showTop && (
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={scrollToTop}
+          className="fixed right-4 bottom-6 md:bottom-8 z-50 bg-background/70 backdrop-blur rounded-full shadow-lg text-foreground hover:text-primary"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </Button>
+      )}
       <ParticleBackground />
 
       {/* Hero Section */}
