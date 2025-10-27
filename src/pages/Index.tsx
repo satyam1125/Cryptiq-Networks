@@ -22,8 +22,8 @@ const Index = () => {
         {/* Animated particle background */}
         <div className="absolute inset-0 -z-10">
           <ParticleBackground />
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         </div>
 
         <div className="container mx-auto text-center max-w-5xl">
@@ -35,10 +35,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.span 
-              className="inline-block bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500 bg-clip-text text-transparent"
+              className="inline-block bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent"
               style={{
-                textShadow: "0 10px 30px rgba(147, 51, 234, 0.3), 0 0 60px rgba(147, 51, 234, 0.2)",
-                filter: "drop-shadow(0 0 20px rgba(147, 51, 234, 0.4))"
+                textShadow: "0 10px 30px rgba(0, 149, 255, 0.3), 0 0 60px rgba(0, 149, 255, 0.2)",
+                filter: "drop-shadow(0 0 20px rgba(0, 149, 255, 0.4))"
               }}
               animate={{
                 rotateX: [0, 5, 0, -5, 0],
@@ -72,11 +72,11 @@ const Index = () => {
               variant="hero" 
               size="lg" 
               onClick={scrollToContact}
-              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700"
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600"
             >
               Start Your Project
             </Button>
-            <Button variant="outline" size="lg" asChild className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
+            <Button variant="outline" size="lg" asChild className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white">
               <Link to="/our-work">View Our Work</Link>
             </Button>
           </div>
@@ -145,10 +145,10 @@ const Index = () => {
             {/* Office Addresses */}
             <div className="space-y-6">
               {/* Mumbai Office */}
-              <Card className="bg-card/50 backdrop-blur-lg border-border hover:border-purple-500 transition-all">
+              <Card className="bg-card/50 backdrop-blur-lg border-border hover:border-blue-500 transition-all">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <MapPin className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">Mumbai Office</h3>
                       <p className="text-muted-foreground text-sm">
@@ -160,14 +160,14 @@ const Index = () => {
                   </div>
                   <div className="space-y-3 mt-4">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-4 h-4 text-purple-500" />
-                      <a href="tel:+912212345678" className="text-sm text-muted-foreground hover:text-purple-500">
+                      <Phone className="w-4 h-4 text-blue-500" />
+                      <a href="tel:+912212345678" className="text-sm text-muted-foreground hover:text-blue-500">
                         +91 7400131613
                       </a>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Mail className="w-4 h-4 text-purple-500" />
-                      <a href="mailto:mumbai@cryptiqnetworks.com" className="text-sm text-muted-foreground hover:text-purple-500">
+                      <Mail className="w-4 h-4 text-blue-500" />
+                      <a href="mailto:mumbai@cryptiqnetworks.com" className="text-sm text-muted-foreground hover:text-blue-500">
                         cryptiqnetworks@gmail.com
                       </a>
                     </div>
@@ -176,10 +176,10 @@ const Index = () => {
               </Card>
 
               {/* Prayagraj Office */}
-              <Card className="bg-card/50 backdrop-blur-lg border-border hover:border-purple-500 transition-all">
+              <Card className="bg-card/50 backdrop-blur-lg border-border hover:border-blue-500 transition-all">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <MapPin className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">Prayagraj Office</h3>
                       <p className="text-muted-foreground text-sm">
@@ -191,14 +191,14 @@ const Index = () => {
                   </div>
                   <div className="space-y-3 mt-4">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-4 h-4 text-purple-500" />
-                      <a href="tel:+915322123456" className="text-sm text-muted-foreground hover:text-purple-500">
+                      <Phone className="w-4 h-4 text-blue-500" />
+                      <a href="tel:+915322123456" className="text-sm text-muted-foreground hover:text-blue-500">
                         +91 6392769496
                       </a>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Mail className="w-4 h-4 text-purple-500" />
-                      <a href="mailto:prayagraj@cryptiqnetworks.com" className="text-sm text-muted-foreground hover:text-purple-500">
+                      <Mail className="w-4 h-4 text-blue-500" />
+                      <a href="mailto:prayagraj@cryptiqnetworks.com" className="text-sm text-muted-foreground hover:text-blue-500">
                         cryptiqnetworks@gmail.com
                       </a>
                     </div>
@@ -211,7 +211,7 @@ const Index = () => {
       </section>
 
       {/* Footer CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Company Info */}
@@ -293,7 +293,7 @@ const Index = () => {
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
                   <a href="tel:+912212345678" className="text-white/80 hover:text-white transition-colors">
-                    +91 22 1234 5678
+                    +91 7400131613
                   </a>
                 </li>
                 <li className="flex items-start gap-2">

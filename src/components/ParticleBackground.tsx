@@ -52,7 +52,7 @@ const ParticleBackground = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(147, 51, 234, 0.8)"; // Purple color
+        ctx.fillStyle = "rgba(0, 149, 255, 0.8)"; // Dark neon blue color
         ctx.fill();
       });
 
@@ -64,7 +64,7 @@ const ParticleBackground = () => {
 
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(147, 51, 234, ${0.4 * (1 - distance / 150)})`; // Purple color
+            ctx.strokeStyle = `rgba(0, 149, 255, ${0.4 * (1 - distance / 150)})`; // Dark neon blue color
             ctx.lineWidth = 1.5;
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
