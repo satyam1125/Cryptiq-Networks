@@ -18,19 +18,19 @@ const About = () => {
     {
       name: "Satyam Mishra",
       role: "Founder",
-      bio: "Visionary leader with a passion for innovative web solutions and cybersecurity.",
+      bio: "Visionary leader with a strong specialization in Cyber Security  architecture and driving advanced web and blockchain solutions for Cryptiq Networks.",
       image: "satyam.jpg",
     },
     {
       name: "Samartha Arote",
       role: "Co-Founder",
-      bio: "Tech expert specializing in full-stack development and system architecture.",
+      bio: "App developer skilled in AI/ML and ethical hacking, dedicated to building secure, intelligent, and future-ready digital solutions.",
       image: "samartha.jpg",
     },
     {
       name: "Ajay Mishra",
       role: "Co-Founder",
-      bio: "Operations specialist ensuring smooth project delivery and client satisfaction.",
+      bio: "Web developer  and graphic designer dedicated to delivering creative, impactful digital experiences and prioritizing client satisfaction throughout every project.",
       image: "ajay.png",
     },
   ];
