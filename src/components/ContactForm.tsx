@@ -130,6 +130,7 @@ const ContactForm = ({
               <option value="graphic-logo-design">Graphic - Logo Designing</option>
               <option value="graphic-poster-businesscard">Graphic - Poster & Business Card</option>
               <option value="graphic-ui-ux">Graphic - UI / UX Designing</option>
+              <option value="social-media">Social Media Management</option>
             </select>
           </div>
 

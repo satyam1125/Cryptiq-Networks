@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import ServiceCard from "@/components/ServiceCard";
 import ParticleBackground from "@/components/ParticleBackground";
 import ContactForm from "@/components/ContactForm";
-import { Globe, Smartphone, Shield, MapPin, Mail, Phone, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Globe, Smartphone, Shield, MapPin, Mail, Phone, Instagram, Linkedin, Twitter, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -117,16 +117,23 @@ const Index = () => {
 
             {/* New services: AI Agents & Graphic Designing */}
             <ServiceCard
-              icon={MapPin} // reuse an icon - replace if desired
+              icon={MapPin}
               title="AI Agents"
               description="Custom AI agent solutions — automation, chatbots, autonomous agents and integrations."
               link="/services/ai-agents"
             />
             <ServiceCard
-              icon={Mail} // reuse an icon - replace if desired
+              icon={Mail}
               title="Graphic Designing"
               description="Logo, poster, business card and UI/UX design services to elevate your brand."
               link="/services/graphic-designing"
+            />
+
+            <ServiceCard
+              icon={Users}
+              title="Social Media Management"
+              description="Daily posting, follower growth and engagement with a dedicated social team."
+              link="/services/social-media"
             />
           </div>
         </div>
@@ -269,6 +276,11 @@ const Index = () => {
                 <li>
                   <Link to="/services/website-development" className="text-white/80 hover:text-white transition-colors">
                     Website Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/social-media" className="text-white/80 hover:text-white transition-colors">
+                    Social Media Management
                   </Link>
                 </li>
                 <li>

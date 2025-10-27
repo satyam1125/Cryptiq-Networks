@@ -24,6 +24,9 @@ import UIUXDesign from "./pages/graphic/UIUXDesign";
 /* AI Agents page */
 import AIAgents from "./pages/AIAgents";
 
+/* New: Social Media page */
+import SocialMedia from "./pages/SocialMedia";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -46,6 +49,7 @@ const App = () => (
           {/* New services */}
           <Route path="/services/ai-agents" element={<AIAgents />} />
           <Route path="/services/graphic-designing" element={<GraphicDesigning />} />
+          <Route path="/services/social-media" element={<SocialMedia />} />
 
           {/* Graphic subpages */}
           <Route path="/services/graphic-designing/logo-designing" element={<LogoDesign />} />
