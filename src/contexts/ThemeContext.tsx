@@ -11,8 +11,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    return savedTheme || "light";
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    // Default to dark when no saved preference exists
+    return savedTheme ? savedTheme : "dark";
   });
 
   useEffect(() => {
